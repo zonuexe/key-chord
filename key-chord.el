@@ -189,6 +189,7 @@
 ;;      First release
 
 ;;; Code:
+(require 'nadvice)
 
 (defvar key-chord-two-keys-delay 0.15	; 0.05 or 0.1
   "Max time delay between two key press to be considered a key chord.")
@@ -374,12 +375,10 @@ Please ignore that."
 	  key-chord-idle-state     nil)
     (list first-char)))
 
-(require 'advice)
-
-(defadvice start-kbd-macro (after key-chord activate)
+(define-advice start-kbd-macro (:after (&rest _) key-chord)
   (setq key-chord-defining-kbd-macro nil))
 
-(defadvice end-kbd-macro (after key-chord activate)
+(define-advice end-kbd-macro (:after (&rest _) key-chord)
   (setq key-chord-in-last-kbd-macro key-chord-defining-kbd-macro))
 
 (provide 'key-chord)
