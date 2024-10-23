@@ -1,7 +1,5 @@
-;;; -*- lexical-binding: t -*-
-;;; key-chord.el --- map pairs of simultaneously pressed keys to commands
-;;-------------------------------------------------------------------
-;;
+;;; key-chord.el --- map pairs of simultaneously pressed keys to commands  -*- lexical-binding: t -*-
+
 ;; Copyright (C) 2003,2005,2008,2012 David Andersson
 ;;
 ;; This file is NOT part of Emacs.
@@ -21,11 +19,10 @@
 ;; Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 ;; MA 02111-1307 USA
 ;;
-;;-------------------------------------------------------------------
 
 ;; Author: David Andersson <l.david.andersson(at)sverige.nu>
 ;; Created: 27 April 2003
-;; Version: 0.7 (2017-06-29)
+;; Version: 0.8
 ;; Keywords: keyboard chord input
 
 ;;; Commentary:
@@ -173,6 +170,8 @@
 
 ;; ########   History   ########################################
 ;;
+;; 0.8 (2024-10-23) zonuexe
+;; 	Use define-advice instead of defadvice
 ;; 0.7 (2017-06-29) zk-phi
 ;; 	Add option `key-chord-safety-interval-backward/forward'
 ;; 0.6 (2012-10-23) l.david.andersson(at)sverige.nu
